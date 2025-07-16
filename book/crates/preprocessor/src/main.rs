@@ -174,9 +174,6 @@ impl This {
         let long_rev = self.steps.commit_hash(step);
         let commit_link = self.step_commit_link(step);
         let mut s = String::new();
-        // writeln!(&mut s, "## Step {step} [<i class=\"fa fa-github\"></i>]({commit_link}) `{short_rev}`").unwrap();
-        // writeln!(&mut s, "## Step {step} `{short_rev}` [<i class=\"fa fa-github\"></i>]({commit_link})").unwrap();
-        // writeln!(&mut s, "<span class=\"step-heading\">").unwrap();
         write!(&mut s, "## Step {step}{text}").unwrap();
         write!(&mut s, "&nbsp;").unwrap();
         write!(&mut s, "&nbsp;").unwrap();
@@ -184,7 +181,6 @@ impl This {
         write!(&mut s, "<span class=\"step-heading-clickable\" onclick=\"navigator.clipboard.writeText('{long_rev}')\">&nbsp;<i class=\"fa fa-copy\"></i>&nbsp;</span>").unwrap();
         write!(&mut s, "<a class=\"step-heading-clickable\" href=\"{commit_link}\">&nbsp;<i class=\"fa fa-github\"></i>&nbsp;</a>").unwrap();
         writeln!(&mut s, "").unwrap();
-        // writeln!(&mut s, "</span>").unwrap();
         s
     }
 
