@@ -173,13 +173,22 @@ impl This {
     fn render_step_header(&self, step: &Step, text: &str) -> String {
         let long_rev = self.steps.commit_hash(step);
         let commit_link = self.step_commit_link(step);
+        let step_id = {
+            let (i, j_upper) = step.structured();
+            let j = j_upper.to_lowercase();
+            format!("step-{i}{j}")
+        };
         let mut s = String::new();
-        write!(&mut s, "## Step {step}{text}").unwrap();
+        write!(&mut s, "<h2 id=\"{step_id}\">").unwrap();
+        write!(&mut s, "<a class=\"header\" href=\"#{step_id}\">").unwrap();
+        write!(&mut s, "Step {step}{text}").unwrap();
         write!(&mut s, "&nbsp;").unwrap();
         write!(&mut s, "&nbsp;").unwrap();
         write!(&mut s, "&nbsp;").unwrap();
         write!(&mut s, "<span class=\"step-heading-clickable\" onclick=\"navigator.clipboard.writeText('{long_rev}')\">&nbsp;<i class=\"fa fa-copy\"></i>&nbsp;</span>").unwrap();
+        write!(&mut s, "</a>").unwrap();
         write!(&mut s, "<a class=\"step-heading-clickable\" href=\"{commit_link}\">&nbsp;<i class=\"fa fa-github\"></i>&nbsp;</a>").unwrap();
+        write!(&mut s, "</h2>").unwrap();
         writeln!(&mut s, "").unwrap();
         s
     }
