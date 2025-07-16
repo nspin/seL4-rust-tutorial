@@ -189,7 +189,9 @@ impl This {
         writeln!(&mut s, "<span class=\"step-heading-clickable\" onclick=\"navigator.clipboard.writeText('{long_rev}')\">").unwrap();
         writeln!(&mut s, "&nbsp;<i class=\"fa fa-copy\"></i>&nbsp;").unwrap();
         writeln!(&mut s, "</span>").unwrap();
-        writeln!(&mut s, "<a class=\"step-heading-clickable\" href=\"{commit_link}\">&nbsp;<i class=\"fa fa-github\"></i>&nbsp;</a>").unwrap();
+        writeln!(&mut s, "<a class=\"step-heading-clickable\" href=\"{commit_link}\">").unwrap();
+        writeln!(&mut s, "&nbsp;<i class=\"fa fa-github\"></i>&nbsp;").unwrap();
+        writeln!(&mut s, "</a>").unwrap();
         writeln!(&mut s, "</h2>").unwrap();
         writeln!(&mut s, "").unwrap();
         s
