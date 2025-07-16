@@ -58,9 +58,7 @@ check-html:
 	html5validator \
 		--root $(build_dir) \
 		--ignore \
-			'Element "head" is missing a required instance of child element "title".' \
-			'Start tag "a" seen but an element of the same type was already open.' \
-			'Stray end tag "a".'
+			'Element "head" is missing a required instance of child element "title".'
 
 .PHONY: check-links
 check-links:
