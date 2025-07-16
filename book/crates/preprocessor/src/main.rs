@@ -180,9 +180,9 @@ impl This {
         };
         let mut s = String::new();
         write!(&mut s, "<h2 id=\"{step_id}\">").unwrap();
-            write!(&mut s, "<a class=\"header\" href=\"#{step_id}\">").unwrap();
+            // write!(&mut s, "<a class=\"header\" href=\"#{step_id}\">").unwrap();
                 write!(&mut s, "Step {step}{text}").unwrap();
-            write!(&mut s, "</a>").unwrap();
+            // write!(&mut s, "</a>").unwrap();
             write!(&mut s, "&nbsp;&nbsp;&nbsp;").unwrap();
             write!(&mut s, "<span class=\"step-heading-clickable\" onclick=\"navigator.clipboard.writeText('{long_rev}')\">").unwrap();
                 write!(&mut s, "&nbsp;<i class=\"fa fa-copy\"></i>&nbsp;").unwrap();
