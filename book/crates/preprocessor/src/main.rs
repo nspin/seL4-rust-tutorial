@@ -179,8 +179,12 @@ impl This {
             format!("step-{i}{j}")
         };
         let mut s = String::new();
-        write!(&mut s, "<h2 id=\"{step_id}\">").unwrap();
-            write!(&mut s, "<a class=\"header\" href=\"#{step_id}\">").unwrap();
+        writeln!(&mut s, "").unwrap();
+        writeln!(&mut s, "").unwrap();
+        // writeln!(&mut s, "<![CDATA[").unwrap();
+        // write!(&mut s, "<div>").unwrap();
+        write!(&mut s, "<h2 id=\"yy{step_id}\">").unwrap();
+            write!(&mut s, "<a class=\"header\" href=\"#xx{step_id}\">").unwrap();
                 write!(&mut s, "Step {step}{text}").unwrap();
             write!(&mut s, "</a>").unwrap();
             write!(&mut s, "&nbsp;&nbsp;&nbsp;").unwrap();
@@ -191,6 +195,10 @@ impl This {
                 write!(&mut s, "&nbsp;<i class=\"fa fa-github\"></i>&nbsp;").unwrap();
             write!(&mut s, "</a>").unwrap();
         write!(&mut s, "</h2>").unwrap();
+        // write!(&mut s, "</div>").unwrap();
+        writeln!(&mut s, "").unwrap();
+        // writeln!(&mut s, "]]>").unwrap();
+        writeln!(&mut s, "").unwrap();
         writeln!(&mut s, "").unwrap();
         s
     }
