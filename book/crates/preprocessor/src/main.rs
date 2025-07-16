@@ -179,18 +179,18 @@ impl This {
             format!("step-{i}{j}")
         };
         let mut s = String::new();
-        write!(&mut s, "<h2 id=\"{step_id}\">").unwrap();
-        write!(&mut s, "<a class=\"header\" href=\"#{step_id}\">").unwrap();
-        write!(&mut s, "Step {step}{text}").unwrap();
-        write!(&mut s, "</a>").unwrap();
-        write!(&mut s, "&nbsp;").unwrap();
-        write!(&mut s, "&nbsp;").unwrap();
-        write!(&mut s, "&nbsp;").unwrap();
-        write!(&mut s, "<span class=\"step-heading-clickable\" onclick=\"navigator.clipboard.writeText('{long_rev}')\">").unwrap();
-        write!(&mut s, "&nbsp;<i class=\"fa fa-copy\"></i>&nbsp;").unwrap();
-        write!(&mut s, "</span>").unwrap();
-        write!(&mut s, "<a class=\"step-heading-clickable\" href=\"{commit_link}\">&nbsp;<i class=\"fa fa-github\"></i>&nbsp;</a>").unwrap();
-        write!(&mut s, "</h2>").unwrap();
+        writeln!(&mut s, "<h2 id=\"{step_id}\">").unwrap();
+        writeln!(&mut s, "<a class=\"header\" href=\"#{step_id}\">").unwrap();
+        writeln!(&mut s, "Step {step}{text}").unwrap();
+        writeln!(&mut s, "</a>").unwrap();
+        writeln!(&mut s, "&nbsp;").unwrap();
+        writeln!(&mut s, "&nbsp;").unwrap();
+        writeln!(&mut s, "&nbsp;").unwrap();
+        writeln!(&mut s, "<span class=\"step-heading-clickable\" onclick=\"navigator.clipboard.writeText('{long_rev}')\">").unwrap();
+        writeln!(&mut s, "&nbsp;<i class=\"fa fa-copy\"></i>&nbsp;").unwrap();
+        writeln!(&mut s, "</span>").unwrap();
+        writeln!(&mut s, "<a class=\"step-heading-clickable\" href=\"{commit_link}\">&nbsp;<i class=\"fa fa-github\"></i>&nbsp;</a>").unwrap();
+        writeln!(&mut s, "</h2>").unwrap();
         writeln!(&mut s, "").unwrap();
         s
     }
